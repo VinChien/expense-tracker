@@ -4,7 +4,7 @@ const User = require('../../models/user');
 const passport = require('passport');
 const bcrypt = require('bcryptjs');
 
-//login
+
 router.get('/login', (req, res) => {
   res.render('login');
 });
@@ -18,7 +18,7 @@ router.post(
   })
 );
 
-//register
+
 router.get('/register', (req, res) => {
   res.render('register');
 });
@@ -62,7 +62,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
-//logout
+
 router.get('/logout', (req, res) => {
   req.logout();
   req.flash('success_msg', '您已經成功登出。');

@@ -3,7 +3,7 @@ const router = express.Router();
 const Record = require('../../models/record');
 const Category = require('../../models/category');
 
-//create
+
 router.get('/new', async (req, res) => {
   try {
     const categories = await Category.find().lean().sort({ _id: 'asc' });
@@ -12,6 +12,7 @@ router.get('/new', async (req, res) => {
     console.log(err);
   }
 });
+
 router.post('/new', async (req, res) => {
   try {
     const userId = req.user._id;
@@ -27,7 +28,7 @@ router.post('/new', async (req, res) => {
   }
 });
 
-//update
+
 router.get('/:id/edit', async (req, res) => {
   try {
     const userId = req.user._id;
@@ -57,7 +58,7 @@ router.put('/:id', async (req, res) => {
     console.log(err);
   }
 });
-//delete
+
 router.delete('/:id', async (req, res) => {
   try {
     const userId = req.user._id;

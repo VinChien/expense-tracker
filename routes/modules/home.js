@@ -3,7 +3,7 @@ const router = express.Router();
 const Record = require('../../models/record');
 const Category = require('../../models/category');
 
-//read all
+
 router.get('/', async (req, res) => {
   try {
     const userId = req.user._id;
@@ -25,7 +25,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-//category filter
+
 router.get('/filter', async (req, res) => {
   try {
     const userId = req.user._id;
